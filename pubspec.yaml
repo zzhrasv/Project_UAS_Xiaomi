@@ -1,0 +1,108 @@
+name: project_uas_xiaomi
+description: "Mi Store Clone — Showcase & E-Commerce app built with Flutter & Supabase."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+# =============================================================================
+# DEPENDENCIES
+# =============================================================================
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ---------------------------------------------------------------------------
+  # Core / Flutter
+  # ---------------------------------------------------------------------------
+  cupertino_icons: ^1.0.8
+
+  # ---------------------------------------------------------------------------
+  # State Management
+  # ---------------------------------------------------------------------------
+  flutter_bloc: ^9.1.1        # BLoC pattern implementation
+  equatable: ^2.0.7            # Value equality for BLoC states/events
+  bloc: ^9.0.0                 # Core bloc library
+
+  # ---------------------------------------------------------------------------
+  # Navigation
+  # ---------------------------------------------------------------------------
+  go_router: ^15.1.2           # Declarative routing for Flutter
+
+  # ---------------------------------------------------------------------------
+  # Backend — Supabase
+  # ---------------------------------------------------------------------------
+  supabase_flutter: ^2.9.1     # Supabase client (Auth, DB, Storage, Realtime)
+
+  # ---------------------------------------------------------------------------
+  # Model / Serialization
+  # ---------------------------------------------------------------------------
+  freezed_annotation: ^2.4.4   # Annotations for Freezed (model generation)
+  json_annotation: ^4.9.0      # Annotations for json_serializable
+
+  # ---------------------------------------------------------------------------
+  # UI — Components
+  # ---------------------------------------------------------------------------
+  cached_network_image: ^3.4.1 # Efficient network image caching
+  flutter_svg: ^2.0.17         # SVG rendering support
+  shimmer: ^3.0.0              # Skeleton loading animation
+  carousel_slider: ^5.0.0      # Image/product carousel widget
+
+  # ---------------------------------------------------------------------------
+  # UI — Icons
+  # ---------------------------------------------------------------------------
+  flutter_iconly: ^1.0.2       # Modern icon pack (Iconly)
+
+  # ---------------------------------------------------------------------------
+  # Utilities
+  # ---------------------------------------------------------------------------
+  intl: ^0.20.2                # Internationalization & Rupiah currency format
+  url_launcher: ^6.3.1         # Launch external URLs / deep links
+  shared_preferences: ^2.5.3   # Lightweight local key-value storage
+  connectivity_plus: ^6.1.4    # Network connectivity detection
+  image_picker: ^1.1.2         # Pick images from gallery / camera (profile)
+  permission_handler: ^11.4.0  # Runtime permission management (Android/iOS)
+  loading_animation_widget: ^1.3.0 # Premium loading animations
+
+# =============================================================================
+# DEV DEPENDENCIES
+# =============================================================================
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0        # Recommended Dart/Flutter lint rules
+
+  # ---------------------------------------------------------------------------
+  # Code Generation
+  # ---------------------------------------------------------------------------
+  build_runner: ^2.4.14        # Build system for code generation
+  freezed: ^2.5.7              # Immutable model & union type generator
+  json_serializable: ^6.9.5    # JSON serialization code generator
+
+# =============================================================================
+# FLUTTER CONFIGURATION
+# =============================================================================
+flutter:
+  uses-material-design: true
+
+  # Assets
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+
+  # Fonts — Poppins (premium sans-serif, konsisten dengan branding Xiaomi)
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700

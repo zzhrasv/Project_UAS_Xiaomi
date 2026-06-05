@@ -1,0 +1,42 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # ── Freezed false positives ────────────────────────────────────────────────
+    # @JsonKey pada Freezed const factory constructor parameters adalah valid —
+    # Freezed mengkonversi params tersebut menjadi fields saat code generation.
+    # Ini adalah known false positive dari Dart analyzer.
+    invalid_annotation_target: ignore
+
+    # ── Doc comment HTML warning ───────────────────────────────────────────────
+    # Angle brackets (<T>) di doc comments dibaca sebagai HTML oleh analyzer.
+    # Suppressed karena kita menggunakan backtick di komentar penting.
+    ambiguous_export: ignore
+
+  exclude:
+    # Abaikan file hasil code generation dari analisis
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "lib/generated/**"
+
+linter:
+  rules:
+    # ── Rules yang dinonaktifkan untuk proyek ini ──────────────────────────────
+    # Freezed menghasilkan file tanpa const constructors
+    prefer_const_constructors: false
+    # Freezed menggunakan cascade notation yang kadang bertabrakan
+    cascade_invocations: false
+    # Mengizinkan TODO comments untuk tracking development progress
+    # avoid_todos: false  # Uncomment jika mau disable
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options

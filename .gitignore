@@ -1,0 +1,72 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code — launch.json bisa berisi --dart-define secrets, jadi di-ignore
+.vscode/launch.json
+.vscode/*.code-workspace
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# =============================================================================
+# SECURITY — Environment & Secrets
+# =============================================================================
+# File .env JANGAN pernah di-commit (berisi API keys)
+.env
+.env.*
+*.env
+!.env.example
+
+# Dart defines file (jika kamu simpan secrets di sini)
+dart_defines.json
+dart_defines/
+
+# =============================================================================
+# CODE GENERATION — File hasil build_runner
+# =============================================================================
+# Comment baris di bawah jika kamu ingin commit generated files ke repo
+# (beberapa tim memilih commit generated files untuk kemudahan CI/CD)
+# *.freezed.dart
+# *.g.dart
+
+# =============================================================================
+# OS & Editor
+# =============================================================================
+Thumbs.db
+Desktop.ini

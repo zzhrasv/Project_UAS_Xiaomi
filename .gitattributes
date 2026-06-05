@@ -1,0 +1,34 @@
+# Normalize line endings untuk semua file teks
+* text=auto eol=lf
+
+# Windows batch files tetap pakai CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Dart & Flutter files — LF
+*.dart text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.gradle text eol=lf
+*.xml text eol=lf
+*.swift text eol=lf
+*.kt text eol=lf
+*.java text eol=lf
+
+# Binary files — jangan disentuh
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+*.apk binary
+*.aab binary
+*.ipa binary
