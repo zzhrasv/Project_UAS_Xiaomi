@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_text_styles.dart';
 
-/// Tanggung jawab: Mendefinisikan ThemeData lengkap untuk aplikasi Mi Store.
-/// Semua komponen Material 3 dikustomisasi sesuai branding Xiaomi.
-/// Hanya ada satu tema (light) yang dipakai — konsisten dengan Mi Store Indonesia.
+// Tanggung jawab: Mendefinisikan ThemeData lengkap untuk aplikasi Mi Store.
+// Semua komponen Material 3 dikustomisasi sesuai branding Xiaomi.
+// Font Poppins di-load via GoogleFonts — tidak perlu bundle .ttf.
 
 final class AppTheme {
   AppTheme._();
@@ -32,17 +33,33 @@ final class AppTheme {
       useMaterial3: true,
       colorScheme: colorScheme,
       scaffoldBackgroundColor: AppColors.background,
-      fontFamily: 'Poppins',
+
+      // ── Google Fonts — Poppins sebagai font global ─────────────────────────
+      textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+        displayLarge: AppTextStyles.displayLarge,
+        displayMedium: AppTextStyles.displayMedium,
+        headlineLarge: AppTextStyles.headlineLarge,
+        headlineMedium: AppTextStyles.headlineMedium,
+        headlineSmall: AppTextStyles.headlineSmall,
+        titleLarge: AppTextStyles.titleLarge,
+        titleMedium: AppTextStyles.titleMedium,
+        bodyLarge: AppTextStyles.bodyLarge,
+        bodyMedium: AppTextStyles.bodyMedium,
+        bodySmall: AppTextStyles.bodySmall,
+        labelLarge: AppTextStyles.labelLarge,
+        labelMedium: AppTextStyles.labelMedium,
+        labelSmall: AppTextStyles.labelSmall,
+      ),
 
       // ── AppBar ─────────────────────────────────────────────────────────────
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: AppColors.surface,
         foregroundColor: AppColors.textPrimary,
         elevation: 0,
         scrolledUnderElevation: 1,
         centerTitle: false,
         titleTextStyle: AppTextStyles.headlineMedium,
-        iconTheme: IconThemeData(color: AppColors.textPrimary),
+        iconTheme: const IconThemeData(color: AppColors.textPrimary),
       ),
 
       // ── ElevatedButton ─────────────────────────────────────────────────────
@@ -118,19 +135,17 @@ final class AppTheme {
       ),
 
       // ── BottomNavigationBar ────────────────────────────────────────────────
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColors.surface,
         selectedItemColor: AppColors.primary,
         unselectedItemColor: AppColors.textHint,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
-        selectedLabelStyle: TextStyle(
-          fontFamily: 'Poppins',
+        selectedLabelStyle: GoogleFonts.poppins(
           fontSize: 11,
           fontWeight: FontWeight.w600,
         ),
-        unselectedLabelStyle: TextStyle(
-          fontFamily: 'Poppins',
+        unselectedLabelStyle: GoogleFonts.poppins(
           fontSize: 11,
           fontWeight: FontWeight.w400,
         ),

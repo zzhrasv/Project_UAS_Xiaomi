@@ -3,10 +3,12 @@ import 'package:go_router/go_router.dart';
 import '../../core/constants/app_routes.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/register_page.dart';
+import '../../features/auth/presentation/pages/profile_page.dart';
 import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/product/presentation/pages/product_detail_page.dart';
 import '../../features/product/presentation/pages/product_list_page.dart';
 import '../../features/cart/presentation/pages/cart_page.dart';
+import '../../features/cart/presentation/pages/checkout_page.dart';
 
 /// Tanggung jawab: Konfigurasi seluruh routing aplikasi dengan GoRouter.
 /// Route guard (redirect) untuk cek autentikasi akan ditambahkan di task auth.
@@ -42,6 +44,11 @@ final GoRouter appRouter = GoRouter(
       name: AppRoutes.homeName,
       builder: (context, state) => const HomePage(),
     ),
+    GoRoute(
+      path: AppRoutes.profile,
+      name: AppRoutes.profileName,
+      builder: (context, state) => const ProfilePage(),
+    ),
 
     // ── Product ─────────────────────────────────────────────────────────────
     GoRoute(
@@ -66,6 +73,11 @@ final GoRouter appRouter = GoRouter(
       path: AppRoutes.cart,
       name: 'cart',
       builder: (context, state) => const CartPage(),
+    ),
+    GoRoute(
+      path: AppRoutes.checkout,
+      name: AppRoutes.checkoutName,
+      builder: (context, state) => const CheckoutPage(),
     ),
   ],
 

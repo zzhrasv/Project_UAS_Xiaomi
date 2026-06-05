@@ -12,7 +12,8 @@ part of 'profile_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 ProfileModel _$ProfileModelFromJson(Map<String, dynamic> json) {
   return _ProfileModel.fromJson(json);
@@ -41,14 +42,16 @@ mixin _$ProfileModel {
 /// @nodoc
 abstract class $ProfileModelCopyWith<$Res> {
   factory $ProfileModelCopyWith(
-          ProfileModel value, $Res Function(ProfileModel) then) =
-      _$ProfileModelCopyWithImpl<$Res, ProfileModel>;
+    ProfileModel value,
+    $Res Function(ProfileModel) then,
+  ) = _$ProfileModelCopyWithImpl<$Res, ProfileModel>;
   @useResult
-  $Res call(
-      {String id,
-      @JsonKey(name: 'full_name') String fullName,
-      @JsonKey(name: 'phone_number') String? phoneNumber,
-      @JsonKey(name: 'mi_points') int miPoints});
+  $Res call({
+    String id,
+    @JsonKey(name: 'full_name') String fullName,
+    @JsonKey(name: 'phone_number') String? phoneNumber,
+    @JsonKey(name: 'mi_points') int miPoints,
+  });
 }
 
 /// @nodoc
@@ -71,24 +74,27 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
     Object? phoneNumber = freezed,
     Object? miPoints = null,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      fullName: null == fullName
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      miPoints: null == miPoints
-          ? _value.miPoints
-          : miPoints // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as String,
+            fullName: null == fullName
+                ? _value.fullName
+                : fullName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            phoneNumber: freezed == phoneNumber
+                ? _value.phoneNumber
+                : phoneNumber // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            miPoints: null == miPoints
+                ? _value.miPoints
+                : miPoints // ignore: cast_nullable_to_non_nullable
+                      as int,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -96,15 +102,17 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
 abstract class _$$ProfileModelImplCopyWith<$Res>
     implements $ProfileModelCopyWith<$Res> {
   factory _$$ProfileModelImplCopyWith(
-          _$ProfileModelImpl value, $Res Function(_$ProfileModelImpl) then) =
-      __$$ProfileModelImplCopyWithImpl<$Res>;
+    _$ProfileModelImpl value,
+    $Res Function(_$ProfileModelImpl) then,
+  ) = __$$ProfileModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      @JsonKey(name: 'full_name') String fullName,
-      @JsonKey(name: 'phone_number') String? phoneNumber,
-      @JsonKey(name: 'mi_points') int miPoints});
+  $Res call({
+    String id,
+    @JsonKey(name: 'full_name') String fullName,
+    @JsonKey(name: 'phone_number') String? phoneNumber,
+    @JsonKey(name: 'mi_points') int miPoints,
+  });
 }
 
 /// @nodoc
@@ -112,8 +120,9 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
     extends _$ProfileModelCopyWithImpl<$Res, _$ProfileModelImpl>
     implements _$$ProfileModelImplCopyWith<$Res> {
   __$$ProfileModelImplCopyWithImpl(
-      _$ProfileModelImpl _value, $Res Function(_$ProfileModelImpl) _then)
-      : super(_value, _then);
+    _$ProfileModelImpl _value,
+    $Res Function(_$ProfileModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ProfileModel
   /// with the given fields replaced by the non-null parameter values.
@@ -125,35 +134,38 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? miPoints = null,
   }) {
-    return _then(_$ProfileModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      fullName: null == fullName
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      miPoints: null == miPoints
-          ? _value.miPoints
-          : miPoints // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+    return _then(
+      _$ProfileModelImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+        fullName: null == fullName
+            ? _value.fullName
+            : fullName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        phoneNumber: freezed == phoneNumber
+            ? _value.phoneNumber
+            : phoneNumber // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        miPoints: null == miPoints
+            ? _value.miPoints
+            : miPoints // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ProfileModelImpl implements _ProfileModel {
-  const _$ProfileModelImpl(
-      {required this.id,
-      @JsonKey(name: 'full_name') required this.fullName,
-      @JsonKey(name: 'phone_number') this.phoneNumber,
-      @JsonKey(name: 'mi_points') this.miPoints = 0});
+  const _$ProfileModelImpl({
+    required this.id,
+    @JsonKey(name: 'full_name') required this.fullName,
+    @JsonKey(name: 'phone_number') this.phoneNumber,
+    @JsonKey(name: 'mi_points') this.miPoints = 0,
+  });
 
   factory _$ProfileModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProfileModelImplFromJson(json);
@@ -204,18 +216,17 @@ class _$ProfileModelImpl implements _ProfileModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProfileModelImplToJson(
-      this,
-    );
+    return _$$ProfileModelImplToJson(this);
   }
 }
 
 abstract class _ProfileModel implements ProfileModel {
-  const factory _ProfileModel(
-      {required final String id,
-      @JsonKey(name: 'full_name') required final String fullName,
-      @JsonKey(name: 'phone_number') final String? phoneNumber,
-      @JsonKey(name: 'mi_points') final int miPoints}) = _$ProfileModelImpl;
+  const factory _ProfileModel({
+    required final String id,
+    @JsonKey(name: 'full_name') required final String fullName,
+    @JsonKey(name: 'phone_number') final String? phoneNumber,
+    @JsonKey(name: 'mi_points') final int miPoints,
+  }) = _$ProfileModelImpl;
 
   factory _ProfileModel.fromJson(Map<String, dynamic> json) =
       _$ProfileModelImpl.fromJson;

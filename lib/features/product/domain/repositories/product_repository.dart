@@ -1,9 +1,13 @@
+import '../entities/category_entity.dart';
 import '../entities/product_entity.dart';
 
 /// Tanggung jawab: Kontrak (interface) untuk repository produk.
 /// Use cases bergantung pada abstraksi ini — bukan implementasi konkret.
 
 abstract interface class ProductRepository {
+  /// Mengambil seluruh kategori produk dari database.
+  Future<List<CategoryEntity>> getCategories();
+
   /// Mengambil semua produk featured untuk ditampilkan di carousel Home.
   Future<List<ProductEntity>> getFeaturedProducts();
 

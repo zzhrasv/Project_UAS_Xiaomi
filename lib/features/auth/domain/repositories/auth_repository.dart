@@ -18,6 +18,7 @@ abstract interface class AuthRepository {
     required String email,
     required String password,
     required String fullName,
+    String? phoneNumber,
   });
 
   /// Logout dan invalidasi sesi saat ini.

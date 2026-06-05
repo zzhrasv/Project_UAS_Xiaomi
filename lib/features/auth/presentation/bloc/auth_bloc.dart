@@ -13,8 +13,8 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository _authRepository;
 
-  AuthBloc({required AuthRepository authRepository})
-      : _authRepository = authRepository,
+  AuthBloc({required AuthRepository repository})
+      : _authRepository = repository,
         super(const AuthInitial()) {
     on<AuthCheckRequested>(_onAuthCheckRequested);
     on<AuthSignInRequested>(_onSignInRequested);
@@ -65,6 +65,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         email: event.email,
         password: event.password,
         fullName: event.fullName,
+        phoneNumber: event.phoneNumber,
       );
       emit(AuthAuthenticated(profile: profile));
     } catch (e) {

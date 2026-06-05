@@ -13,7 +13,8 @@ _$ProductModelImpl _$$ProductModelImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       description: json['description'] as String?,
       basePrice: (json['base_price'] as num).toDouble(),
-      imageUrls: (json['image_urls'] as List<dynamic>?)
+      imageUrls:
+          (json['image_urls'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],

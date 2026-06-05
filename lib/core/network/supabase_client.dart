@@ -31,7 +31,7 @@ const String _supabaseUrl = String.fromEnvironment(
 
 const String _supabaseAnonKey = String.fromEnvironment(
   'SUPABASE_ANON_KEY',
-  defaultValue: 'sb_publishable_rPpBO9M0rDargqOoVzr7HA_LdV3TbM1',
+  defaultValue: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhjdGZ2YnB6Y3dnYmFlb3NyamRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2MzYyODUsImV4cCI6MjA5NjIxMjI4NX0.hRgPUN50wyJVEdgYxOzQZkFP_FXrDXb4Di8ZAmBoKVg',
 );
 
 // =============================================================================

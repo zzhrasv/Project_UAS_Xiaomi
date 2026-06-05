@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'cart_item_model.freezed.dart';
@@ -27,3 +28,42 @@ class CartItemModel with _$CartItemModel {
 extension CartItemModelX on CartItemModel {
   double get subtotal => price * quantity;
 }
+
+class CartManager {
+  static final ValueNotifier<List<CartItemModel>> itemsNotifier = ValueNotifier<List<CartItemModel>>([]);
+
+  static List<CartItemModel> get items => itemsNotifier.value;
+
+  static void addItem(CartItemModel newItem) {
+    final list = List<CartItemModel>.from(itemsNotifier.value);
+    final index = list.indexWhere((item) => item.variantId == newItem.variantId);
+    if (index != -1) {
+      list[index] = list[index].copyWith(
+        quantity: list[index].quantity + newItem.quantity,
+      );
+    } else {
+      list.add(newItem);
+    }
+    itemsNotifier.value = list;
+  }
+
+  static void removeItem(String variantId) {
+    final list = List<CartItemModel>.from(itemsNotifier.value);
+    list.removeWhere((item) => item.variantId == variantId);
+    itemsNotifier.value = list;
+  }
+
+  static void updateQuantity(String variantId, int quantity) {
+    final list = List<CartItemModel>.from(itemsNotifier.value);
+    final index = list.indexWhere((item) => item.variantId == variantId);
+    if (index != -1) {
+      list[index] = list[index].copyWith(quantity: quantity);
+      itemsNotifier.value = list;
+    }
+  }
+
+  static void clear() {
+    itemsNotifier.value = [];
+  }
+}
+

@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.5.0 <4.0.0'
+  sdk: '>=3.12.0 <4.0.0'
 
 # =============================================================================
 # DEPENDENCIES
@@ -23,13 +23,13 @@ dependencies:
   # State Management
   # ---------------------------------------------------------------------------
   flutter_bloc: ^9.1.1        # BLoC pattern implementation
-  equatable: ^2.0.7            # Value equality for BLoC states/events
+  equatable: ^2.0.7            # Value equality untuk BLoC states/events
   bloc: ^9.0.0                 # Core bloc library
 
   # ---------------------------------------------------------------------------
   # Navigation
   # ---------------------------------------------------------------------------
-  go_router: ^15.1.2           # Declarative routing for Flutter
+  go_router: ^15.1.3           # Declarative routing for Flutter
 
   # ---------------------------------------------------------------------------
   # Backend — Supabase
@@ -39,8 +39,8 @@ dependencies:
   # ---------------------------------------------------------------------------
   # Model / Serialization
   # ---------------------------------------------------------------------------
-  freezed_annotation: ^2.4.4   # Annotations for Freezed (model generation)
-  json_annotation: ^4.9.0      # Annotations for json_serializable
+  freezed_annotation: ^2.4.4   # Annotations untuk Freezed
+  json_annotation: ^4.9.0      # Annotations untuk json_serializable
 
   # ---------------------------------------------------------------------------
   # UI — Components
@@ -51,9 +51,10 @@ dependencies:
   carousel_slider: ^5.0.0      # Image/product carousel widget
 
   # ---------------------------------------------------------------------------
-  # UI — Icons
+  # UI — Icons & Fonts
   # ---------------------------------------------------------------------------
   flutter_iconly: ^1.0.2       # Modern icon pack (Iconly)
+  google_fonts: ^6.2.1         # Poppins via Google CDN (no bundling)
 
   # ---------------------------------------------------------------------------
   # Utilities
@@ -62,8 +63,8 @@ dependencies:
   url_launcher: ^6.3.1         # Launch external URLs / deep links
   shared_preferences: ^2.5.3   # Lightweight local key-value storage
   connectivity_plus: ^6.1.4    # Network connectivity detection
-  image_picker: ^1.1.2         # Pick images from gallery / camera (profile)
-  permission_handler: ^11.4.0  # Runtime permission management (Android/iOS)
+  image_picker: ^1.1.2         # Pick images from gallery / camera
+  permission_handler: ^11.4.0  # Runtime permission management
   loading_animation_widget: ^1.3.0 # Premium loading animations
 
 # =============================================================================
@@ -78,9 +79,17 @@ dev_dependencies:
   # ---------------------------------------------------------------------------
   # Code Generation
   # ---------------------------------------------------------------------------
-  build_runner: ^2.4.14        # Build system for code generation
-  freezed: ^2.5.7              # Immutable model & union type generator
+  build_runner: ^2.5.4         # Build system untuk code generation
+  freezed: ^2.5.8              # Immutable model & union type generator
   json_serializable: ^6.9.5    # JSON serialization code generator
+
+# =============================================================================
+# DEPENDENCY OVERRIDES
+# Force versi tertentu untuk mengatasi konflik transitive dependency
+# Diperlukan karena Flutter 3.44.1 / Dart 3.12.1 membutuhkan vector_math >= 2.4.0
+# =============================================================================
+dependency_overrides:
+  vector_math: ^2.4.0
 
 # =============================================================================
 # FLUTTER CONFIGURATION
@@ -88,21 +97,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # Assets
   assets:
     - assets/images/
-    - assets/icons/
-    - assets/animations/
-
-  # Fonts — Poppins (premium sans-serif, konsisten dengan branding Xiaomi)
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Poppins-Bold.ttf
-          weight: 700

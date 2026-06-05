@@ -12,7 +12,8 @@ part of 'cart_item_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 CartItemModel _$CartItemModelFromJson(Map<String, dynamic> json) {
   return _CartItemModel.fromJson(json);
@@ -27,8 +28,7 @@ mixin _$CartItemModel {
   @JsonKey(name: 'product_name')
   String get productName => throw _privateConstructorUsedError;
   @JsonKey(name: 'variant_label')
-  String get variantLabel =>
-      throw _privateConstructorUsedError; // "8GB / 256GB"
+  String get variantLabel => throw _privateConstructorUsedError; // "8GB / 256GB"
   @JsonKey(name: 'image_url')
   String get imageUrl => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
@@ -47,17 +47,19 @@ mixin _$CartItemModel {
 /// @nodoc
 abstract class $CartItemModelCopyWith<$Res> {
   factory $CartItemModelCopyWith(
-          CartItemModel value, $Res Function(CartItemModel) then) =
-      _$CartItemModelCopyWithImpl<$Res, CartItemModel>;
+    CartItemModel value,
+    $Res Function(CartItemModel) then,
+  ) = _$CartItemModelCopyWithImpl<$Res, CartItemModel>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'variant_id') String variantId,
-      @JsonKey(name: 'product_id') String productId,
-      @JsonKey(name: 'product_name') String productName,
-      @JsonKey(name: 'variant_label') String variantLabel,
-      @JsonKey(name: 'image_url') String imageUrl,
-      double price,
-      int quantity});
+  $Res call({
+    @JsonKey(name: 'variant_id') String variantId,
+    @JsonKey(name: 'product_id') String productId,
+    @JsonKey(name: 'product_name') String productName,
+    @JsonKey(name: 'variant_label') String variantLabel,
+    @JsonKey(name: 'image_url') String imageUrl,
+    double price,
+    int quantity,
+  });
 }
 
 /// @nodoc
@@ -83,36 +85,39 @@ class _$CartItemModelCopyWithImpl<$Res, $Val extends CartItemModel>
     Object? price = null,
     Object? quantity = null,
   }) {
-    return _then(_value.copyWith(
-      variantId: null == variantId
-          ? _value.variantId
-          : variantId // ignore: cast_nullable_to_non_nullable
-              as String,
-      productId: null == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
-              as String,
-      productName: null == productName
-          ? _value.productName
-          : productName // ignore: cast_nullable_to_non_nullable
-              as String,
-      variantLabel: null == variantLabel
-          ? _value.variantLabel
-          : variantLabel // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            variantId: null == variantId
+                ? _value.variantId
+                : variantId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            productId: null == productId
+                ? _value.productId
+                : productId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            productName: null == productName
+                ? _value.productName
+                : productName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            variantLabel: null == variantLabel
+                ? _value.variantLabel
+                : variantLabel // ignore: cast_nullable_to_non_nullable
+                      as String,
+            imageUrl: null == imageUrl
+                ? _value.imageUrl
+                : imageUrl // ignore: cast_nullable_to_non_nullable
+                      as String,
+            price: null == price
+                ? _value.price
+                : price // ignore: cast_nullable_to_non_nullable
+                      as double,
+            quantity: null == quantity
+                ? _value.quantity
+                : quantity // ignore: cast_nullable_to_non_nullable
+                      as int,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -120,18 +125,20 @@ class _$CartItemModelCopyWithImpl<$Res, $Val extends CartItemModel>
 abstract class _$$CartItemModelImplCopyWith<$Res>
     implements $CartItemModelCopyWith<$Res> {
   factory _$$CartItemModelImplCopyWith(
-          _$CartItemModelImpl value, $Res Function(_$CartItemModelImpl) then) =
-      __$$CartItemModelImplCopyWithImpl<$Res>;
+    _$CartItemModelImpl value,
+    $Res Function(_$CartItemModelImpl) then,
+  ) = __$$CartItemModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'variant_id') String variantId,
-      @JsonKey(name: 'product_id') String productId,
-      @JsonKey(name: 'product_name') String productName,
-      @JsonKey(name: 'variant_label') String variantLabel,
-      @JsonKey(name: 'image_url') String imageUrl,
-      double price,
-      int quantity});
+  $Res call({
+    @JsonKey(name: 'variant_id') String variantId,
+    @JsonKey(name: 'product_id') String productId,
+    @JsonKey(name: 'product_name') String productName,
+    @JsonKey(name: 'variant_label') String variantLabel,
+    @JsonKey(name: 'image_url') String imageUrl,
+    double price,
+    int quantity,
+  });
 }
 
 /// @nodoc
@@ -139,8 +146,9 @@ class __$$CartItemModelImplCopyWithImpl<$Res>
     extends _$CartItemModelCopyWithImpl<$Res, _$CartItemModelImpl>
     implements _$$CartItemModelImplCopyWith<$Res> {
   __$$CartItemModelImplCopyWithImpl(
-      _$CartItemModelImpl _value, $Res Function(_$CartItemModelImpl) _then)
-      : super(_value, _then);
+    _$CartItemModelImpl _value,
+    $Res Function(_$CartItemModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CartItemModel
   /// with the given fields replaced by the non-null parameter values.
@@ -155,50 +163,53 @@ class __$$CartItemModelImplCopyWithImpl<$Res>
     Object? price = null,
     Object? quantity = null,
   }) {
-    return _then(_$CartItemModelImpl(
-      variantId: null == variantId
-          ? _value.variantId
-          : variantId // ignore: cast_nullable_to_non_nullable
-              as String,
-      productId: null == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
-              as String,
-      productName: null == productName
-          ? _value.productName
-          : productName // ignore: cast_nullable_to_non_nullable
-              as String,
-      variantLabel: null == variantLabel
-          ? _value.variantLabel
-          : variantLabel // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+    return _then(
+      _$CartItemModelImpl(
+        variantId: null == variantId
+            ? _value.variantId
+            : variantId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        productId: null == productId
+            ? _value.productId
+            : productId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        productName: null == productName
+            ? _value.productName
+            : productName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        variantLabel: null == variantLabel
+            ? _value.variantLabel
+            : variantLabel // ignore: cast_nullable_to_non_nullable
+                  as String,
+        imageUrl: null == imageUrl
+            ? _value.imageUrl
+            : imageUrl // ignore: cast_nullable_to_non_nullable
+                  as String,
+        price: null == price
+            ? _value.price
+            : price // ignore: cast_nullable_to_non_nullable
+                  as double,
+        quantity: null == quantity
+            ? _value.quantity
+            : quantity // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CartItemModelImpl implements _CartItemModel {
-  const _$CartItemModelImpl(
-      {@JsonKey(name: 'variant_id') required this.variantId,
-      @JsonKey(name: 'product_id') required this.productId,
-      @JsonKey(name: 'product_name') required this.productName,
-      @JsonKey(name: 'variant_label') required this.variantLabel,
-      @JsonKey(name: 'image_url') required this.imageUrl,
-      required this.price,
-      this.quantity = 1});
+  const _$CartItemModelImpl({
+    @JsonKey(name: 'variant_id') required this.variantId,
+    @JsonKey(name: 'product_id') required this.productId,
+    @JsonKey(name: 'product_name') required this.productName,
+    @JsonKey(name: 'variant_label') required this.variantLabel,
+    @JsonKey(name: 'image_url') required this.imageUrl,
+    required this.price,
+    this.quantity = 1,
+  });
 
   factory _$CartItemModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CartItemModelImplFromJson(json);
@@ -215,7 +226,7 @@ class _$CartItemModelImpl implements _CartItemModel {
   @override
   @JsonKey(name: 'variant_label')
   final String variantLabel;
-// "8GB / 256GB"
+  // "8GB / 256GB"
   @override
   @JsonKey(name: 'image_url')
   final String imageUrl;
@@ -252,8 +263,16 @@ class _$CartItemModelImpl implements _CartItemModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, variantId, productId,
-      productName, variantLabel, imageUrl, price, quantity);
+  int get hashCode => Object.hash(
+    runtimeType,
+    variantId,
+    productId,
+    productName,
+    variantLabel,
+    imageUrl,
+    price,
+    quantity,
+  );
 
   /// Create a copy of CartItemModel
   /// with the given fields replaced by the non-null parameter values.
@@ -265,21 +284,20 @@ class _$CartItemModelImpl implements _CartItemModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CartItemModelImplToJson(
-      this,
-    );
+    return _$$CartItemModelImplToJson(this);
   }
 }
 
 abstract class _CartItemModel implements CartItemModel {
-  const factory _CartItemModel(
-      {@JsonKey(name: 'variant_id') required final String variantId,
-      @JsonKey(name: 'product_id') required final String productId,
-      @JsonKey(name: 'product_name') required final String productName,
-      @JsonKey(name: 'variant_label') required final String variantLabel,
-      @JsonKey(name: 'image_url') required final String imageUrl,
-      required final double price,
-      final int quantity}) = _$CartItemModelImpl;
+  const factory _CartItemModel({
+    @JsonKey(name: 'variant_id') required final String variantId,
+    @JsonKey(name: 'product_id') required final String productId,
+    @JsonKey(name: 'product_name') required final String productName,
+    @JsonKey(name: 'variant_label') required final String variantLabel,
+    @JsonKey(name: 'image_url') required final String imageUrl,
+    required final double price,
+    final int quantity,
+  }) = _$CartItemModelImpl;
 
   factory _CartItemModel.fromJson(Map<String, dynamic> json) =
       _$CartItemModelImpl.fromJson;
